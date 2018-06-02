@@ -36,7 +36,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="create new account"
-        android:textColor="#283593"
-        android:onClick="goToSignUp"/>
+        android:textColor="#283593" />
+    <TextView
+        android:id="@+id/forgotpassTV_ID"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        android:onClick="forgotpassAlertDialog"/>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar_login_ID"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
