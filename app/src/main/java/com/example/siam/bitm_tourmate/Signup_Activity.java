@@ -28,7 +28,7 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_signup_);
 
         emailET = findViewById(R.id.email_signup_ET_ID);
-        passET  = findViewById(R.id.pass_signup_ET_ID);
+        passET = findViewById(R.id.pass_signup_ET_ID);
         signupButton = findViewById(R.id.Signup_btn_ID);
         progressBar = findViewById(R.id.progressbarID);
 
@@ -42,7 +42,7 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.Signup_btn_ID:
                 registerUser();
                 break;
@@ -53,7 +53,7 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
         String email = emailET.getText().toString().trim();
         String password = passET.getText().toString().trim();
 
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             emailET.setError("Email is required");
             emailET.requestFocus();
             return;
@@ -64,31 +64,29 @@ public class Signup_Activity extends AppCompatActivity implements View.OnClickLi
 //            return;
 //        }
 
-        if(password.isEmpty()){
+        if (password.isEmpty()) {
             passET.setError("Email is required");
             passET.requestFocus();
             return;
         }
-        if (password.length() < 5){
+        if (password.length() < 5) {
             passET.setError("password need to be at least 6 character");
             passET.requestFocus();
             return;
         }
 
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 progressBar.setVisibility(View.GONE);
-                if (task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(Signup_Activity.this, "Signup successfull", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                } else {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(Signup_Activity.this, "This email is already registerd,try using new email", Toast.LENGTH_LONG).show();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(Signup_Activity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }

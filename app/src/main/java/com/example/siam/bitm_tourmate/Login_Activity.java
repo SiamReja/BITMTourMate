@@ -43,9 +43,10 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.loging_btn_ID).setOnClickListener(this);
 
     }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.reg_TV_ID:
                 finish();
                 startActivity(new Intent(this, Signup_Activity.class));
@@ -89,13 +90,12 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     finish();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     Toast.makeText(Login_Activity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
@@ -103,7 +103,7 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    public void forgotpassAlertDialog(View view){
+    public void forgotpassAlertDialog(View view) {
         Intent intent = new Intent(this, Forgot_Password_Activity.class);
         startActivity(intent);
     }

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Signup_Activity">
 
 
@@ -28,23 +28,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="signup"/>
+        android:text="signup" />
 
     <TextView
         android:id="@+id/reg_TV_ID"
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="backToLogin"
         android:text="Already have an account!"
-        android:textColor="#283593"
-        android:onClick="backToLogin"/>
+        android:textColor="#283593" />
+
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/progressbarID"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
 
 </LinearLayout>

@@ -36,21 +36,19 @@ public class Forgot_Password_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 String resetEmail = forgetPass_ET.getText().toString().trim();
 
-                if (resetEmail.isEmpty()){
+                if (resetEmail.isEmpty()) {
                     Toast.makeText(Forgot_Password_Activity.this, "enter your email", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     progressBar.setVisibility(View.VISIBLE);
                     mAuth.sendPasswordResetEmail(resetEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(Forgot_Password_Activity.this, "email sent", Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(Forgot_Password_Activity.this, MainActivity.class));
-                            }
-                            else {
+                            } else {
                                 Toast.makeText(Forgot_Password_Activity.this, "Error in sending reset email", Toast.LENGTH_SHORT).show();
                             }
                         }
