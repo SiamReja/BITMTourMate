@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login_Activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +25,9 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
     private EditText emailET, passET;
     private TextView forgotPassTV;
     private ProgressBar progressBar;
+
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,14 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.reg_TV_ID).setOnClickListener(this);
         findViewById(R.id.loging_btn_ID).setOnClickListener(this);
+
+        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
+
+        if (firebaseUser!=null){
+            startActivity(new Intent(this,MainActivity.class));
+            finish();
+        }
 
     }
 

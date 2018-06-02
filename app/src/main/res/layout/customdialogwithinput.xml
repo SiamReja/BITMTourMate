@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Event"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000"
+        android:layout_marginBottom="5sp"
+        />
+    <EditText
+        android:id="@+id/event_Name_ET_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Name"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/location_ET_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Starting Location"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/destination_ET_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Destination"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/journey_Date_ET_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Journey Date"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/budget_ET_ID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Budget"
+        android:gravity="center" />
+</LinearLayout>
